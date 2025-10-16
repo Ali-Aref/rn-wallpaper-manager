@@ -1,0 +1,10 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "paths": {
+      "rn-wallpaper-manager": ["../src/index"],
+      "rn-wallpaper-manager/*": ["../src/*"]
+    }
+  }
+}
