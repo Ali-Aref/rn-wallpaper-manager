@@ -4,12 +4,27 @@ export type OnLoadEventPayload = {
   url: string;
 };
 
-export type RnWallpaperManagerModuleEvents = {
-  onChange: (params: ChangeEventPayload) => void;
+export type WallpaperChangedEventPayload = {
+  success: boolean;
+  url?: string;
+  filePath?: string;
+  type: string;
 };
 
-export type ChangeEventPayload = {
-  value: string;
+export type RnWallpaperManagerModuleEvents = {
+  onWallpaperChanged: (params: WallpaperChangedEventPayload) => void;
+};
+
+export type WallpaperType = 'home' | 'lock' | 'both';
+
+export type WallpaperResult = {
+  success: boolean;
+  message: string;
+};
+
+export type WallpaperInfo = {
+  homeScreenSupported: boolean;
+  lockScreenSupported: boolean;
 };
 
 export type RnWallpaperManagerViewProps = {
