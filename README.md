@@ -13,7 +13,7 @@ A React Native Expo module for setting wallpapers on Android devices.
 ## Installation
 
 ```bash
-npm install rn-wallpaper-manager
+npm install rn-expo-wallpaper-manager
 ```
 
 ## Usage
@@ -21,7 +21,7 @@ npm install rn-wallpaper-manager
 ### Basic Usage
 
 ```typescript
-import RnWallpaperManager from 'rn-wallpaper-manager';
+import RnWallpaperManager from 'rn-expo-wallpaper-manager';
 
 // Check if wallpaper setting is supported
 const isSupported = RnWallpaperManager.isWallpaperSettingSupported();

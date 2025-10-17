@@ -1,5 +1,5 @@
 {
-  "name": "rn-wallpaper-manager",
+  "name": "rn-expo-wallpaper-manager",
   "version": "0.1.0",
   "description": "A native module for react native expo to manager wallpaper",
   "main": "build/index.js",
