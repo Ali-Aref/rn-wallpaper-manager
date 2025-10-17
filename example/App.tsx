@@ -1,8 +1,9 @@
 import { useEvent } from 'expo';
 import RnWallpaperManager from 'rn-wallpaper-manager';
-import { Button, ScrollView, Text, View, Alert, StyleSheet } from 'react-native';
+import { ScrollView, Text, View, Alert, StyleSheet } from 'react-native';
 import { useState } from 'react';
-
+import Button from './Button';
+ 
 export default function App() {
   const [isSupported, setIsSupported] = useState<boolean | null>(null);
   const [wallpaperInfo, setWallpaperInfo] = useState<any>(null);
@@ -19,7 +20,7 @@ export default function App() {
       } catch (error) {
         console.error('Failed to get wallpaper info:', error);
       }
-    }
+    } 
   };
 
   const setWallpaperFromUrl = async (type: 'home' | 'lock' | 'both') => {
@@ -41,9 +42,8 @@ export default function App() {
   };
 
   return (
-    <ScrollView style={styles.scrollContainer}>
-      <Text style={styles.header}>Wallpaper Manager Example</Text>
-      
+    <ScrollView contentContainerStyle={styles.container}>  
+      <Text style={styles.header}>Wallpaper Manager</Text>
       <Group name="Device Support">
         <Button
           title="Check Wallpaper Support"
@@ -51,7 +51,7 @@ export default function App() {
         />
         {isSupported !== null && (
           <Text style={styles.text}>
-            Wallpaper setting supported: {isSupported ? 'Yes' : 'No'}
+            Wallpaper setting supported: {isSupported ? "Yes" : "No"}
           </Text>
         )}
         {wallpaperInfo && (
@@ -67,7 +67,7 @@ export default function App() {
       </Group>
 
       <Group name="Set Wallpaper from URL">
-        <Text style={styles.description}>
+        <Text>
           Set wallpaper from a random image URL
         </Text>
         <View style={styles.buttonRow}>
@@ -87,12 +87,6 @@ export default function App() {
             disabled={!isSupported}
           />
         </View>
-      </Group>
-
-      <Group name="Events">
-        <Text style={styles.text}>
-          Last wallpaper change event:
-        </Text>
         {onWallpaperChanged && (
           <Text style={styles.eventText}>
             Success: {onWallpaperChanged.success ? 'Yes' : 'No'}
@@ -101,6 +95,29 @@ export default function App() {
             {`\nType: ${onWallpaperChanged.type}`}
           </Text>
         )}
+      </Group>
+
+      <Group name="Set Wallpaper from File">
+        <Text>
+          Set wallpaper from a local image file
+        </Text>
+        <View style={styles.buttonRow}>
+          <Button
+            title="Home Screen"
+            onPress={() => setWallpaperFromFile('home')}
+            disabled={!isSupported}
+          />
+          <Button
+            title="Lock Screen"
+            onPress={() => setWallpaperFromFile('lock')}
+            disabled={!isSupported}
+          />
+          <Button
+            title="Both Screens"
+            onPress={() => setWallpaperFromFile('both')}
+            disabled={!isSupported}
+          />
+        </View>
       </Group>
     </ScrollView>
   );
@@ -116,46 +133,39 @@ function Group(props: { name: string; children: React.ReactNode }) {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flexGrow: 1,
+    paddingTop: 44,
+    paddingHorizontal: 16,
+    backgroundColor: "#eee",
+  },
   header: {
-    fontSize: 30,
-    margin: 20,
+    fontSize: 24,
     fontWeight: 'bold',
   },
   groupHeader: {
     fontSize: 20,
-    marginBottom: 15,
     fontWeight: '600',
+    marginBottom: 4,
   },
   group: {
-    margin: 20,
+    marginTop: 16,
     backgroundColor: '#fff',
     borderRadius: 10,
     padding: 20,
-  },
-  container: {
-    flex: 1,
-    backgroundColor: '#eee',
-  },
-  scrollContainer: {
-    flex: 1,
+    gap: 4,
   },
   text: {
     fontSize: 16,
     marginVertical: 5,
   },
-  description: {
-    fontSize: 14,
-    color: '#666',
-    marginBottom: 10,
-  },
   buttonRow: {
+    flex: 1,
+    marginTop: 4,
     flexDirection: 'row',
-    justifyContent: 'space-around',
-    flexWrap: 'wrap',
-    gap: 10,
+    gap: 4,
   },
   infoContainer: {
-    marginTop: 10,
     padding: 10,
     backgroundColor: '#f0f0f0',
     borderRadius: 5,
