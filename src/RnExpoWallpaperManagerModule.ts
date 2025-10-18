@@ -1,12 +1,12 @@
 import { NativeModule, requireNativeModule } from 'expo';
 
 import { 
-  RnWallpaperManagerModuleEvents, 
+  RnExpoWallpaperManagerModuleEvents, 
   WallpaperResult, 
   WallpaperInfo 
-} from './RnWallpaperManager.types';
+} from './RnExpoWallpaperManager.types';
 
-declare class RnWallpaperManagerModule extends NativeModule<RnWallpaperManagerModuleEvents> {
+declare class RnExpoWallpaperManagerModule extends NativeModule<RnExpoWallpaperManagerModuleEvents> {
   /**
    * Set wallpaper from a URL
    * @param url - The URL of the image to set as wallpaper
@@ -37,4 +37,4 @@ declare class RnWallpaperManagerModule extends NativeModule<RnWallpaperManagerMo
 }
 
 // This call loads the native module object from the JSI.
-export default requireNativeModule<RnWallpaperManagerModule>('RnWallpaperManager');
+export default requireNativeModule<RnExpoWallpaperManagerModule>('RnExpoWallpaperManager');

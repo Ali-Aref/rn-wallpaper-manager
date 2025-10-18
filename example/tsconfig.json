@@ -3,8 +3,8 @@
   "compilerOptions": {
     "strict": true,
     "paths": {
-      "rn-wallpaper-manager": ["../src/index"],
-      "rn-wallpaper-manager/*": ["../src/*"]
+      "rn-expo-wallpaper-manager": ["../src/index"],
+      "rn-expo-wallpaper-manager/*": ["../src/*"]
     }
   }
 }

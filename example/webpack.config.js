@@ -6,7 +6,7 @@ module.exports = async (env, argv) => {
     {
       ...env,
       babel: {
-        dangerouslyAddModulePathsToTranspile: ['rn-wallpaper-manager'],
+        dangerouslyAddModulePathsToTranspile: ['rn-expo-wallpaper-manager'],
       },
     },
     argv

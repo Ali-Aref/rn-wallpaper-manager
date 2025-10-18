@@ -1,5 +1,5 @@
 import { useEvent } from "expo";
-import RnWallpaperManager from "rn-wallpaper-manager";
+import RnExpoWallpaperManager from "rn-expo-wallpaper-manager";
 import { ScrollView, Text, View, Alert, StyleSheet } from "react-native";
 import { useState } from "react";
 import Button from "./Button";
@@ -9,17 +9,17 @@ export default function App() {
   const [isSupported, setIsSupported] = useState<boolean | null>(null);
   const [wallpaperInfo, setWallpaperInfo] = useState<any>(null);
   const onWallpaperChanged = useEvent(
-    RnWallpaperManager,
+    RnExpoWallpaperManager,
     "onWallpaperChanged",
   );
 
   const checkSupport = async () => {
-    const supported = RnWallpaperManager.isWallpaperSettingSupported();
+    const supported = RnExpoWallpaperManager.isWallpaperSettingSupported();
     setIsSupported(supported);
 
     if (supported) {
       try {
-        const info = await RnWallpaperManager.getCurrentWallpaperInfo();
+        const info = await RnExpoWallpaperManager.getCurrentWallpaperInfo();
         setWallpaperInfo(info);
       } catch (error) {
         console.error("Failed to get wallpaper info:", error);
@@ -29,7 +29,7 @@ export default function App() {
 
   const setWallpaperFromUrl = async (type: "home" | "lock" | "both") => {
     try {
-      const result = await RnWallpaperManager.setWallpaperFromUrl(
+      const result = await RnExpoWallpaperManager.setWallpaperFromUrl(
         "https://picsum.photos/1080/1920", // Random image URL
         type,
       );
@@ -60,7 +60,7 @@ export default function App() {
       try {
         // Remove 'file://' prefix to get the actual file path
         const filePath = result.assets[0].uri.replace("file://", "");
-        const res = await RnWallpaperManager.setWallpaperFromFile(
+        const res = await RnExpoWallpaperManager.setWallpaperFromFile(
           filePath,
           type,
         );

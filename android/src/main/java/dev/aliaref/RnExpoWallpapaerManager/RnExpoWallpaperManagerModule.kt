@@ -1,4 +1,4 @@
-package dev.aliaref.RnWallpapaerManager
+package dev.aliaref.RnExpoWallpapaerManager
 
 import android.app.WallpaperManager
 import android.content.Context
@@ -15,9 +15,9 @@ import java.io.FileOutputStream
 import java.io.InputStream
 import java.net.URL
 
-class RnWallpaperManagerModule : Module() {
+class RnExpoWallpaperManagerModule : Module() {
   override fun definition() = ModuleDefinition {
-    Name("RnWallpaperManager")
+    Name("RnExpoWallpaperManager")
 
     // Defines event names that the module can send to JavaScript.
     Events("onWallpaperChanged")

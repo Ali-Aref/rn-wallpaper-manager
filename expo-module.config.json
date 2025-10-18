@@ -1,9 +1,9 @@
 {
   "platforms": ["apple", "android", "web"],
   "apple": {
-    "modules": ["RnWallpaperManagerModule"]
+    "modules": ["RnExpoWallpaperManagerModule"]
   },
   "android": {
-    "modules": ["dev.aliaref.RnWallpapaerManager.RnWallpaperManagerModule"]
+    "modules": ["dev.aliaref.RnExpoWallpapaerManager.RnExpoWallpaperManagerModule"]
   }
 }

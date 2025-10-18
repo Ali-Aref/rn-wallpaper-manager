@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "rn-wallpaper-manager-example",
-    "slug": "rn-wallpaper-manager-example",
+    "name": "rn-expo-wallpaper-manager-example",
+    "slug": "rn-expo-wallpaper-manager-example",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -14,7 +14,7 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "dev.aliaref.RnWallpapaerManager.example"
+      "bundleIdentifier": "dev.aliaref.RnExpoWallpapaerManager.example"
     },
     "android": {
       "adaptiveIcon": {
@@ -23,7 +23,7 @@
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
-      "package": "dev.aliaref.RnWallpapaerManager.example"
+      "package": "dev.aliaref.RnExpoWallpapaerManager.example"
     },
     "web": {
       "favicon": "./assets/favicon.png"

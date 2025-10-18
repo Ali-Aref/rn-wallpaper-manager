@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
 
-group = 'dev.aliaref.RnWallpapaerManager'
+group = 'dev.aliaref.RnExpoWallpapaerManager'
 version = '0.1.0'
 
 def expoModulesCorePlugin = new File(project(":expo-modules-core").projectDir.absolutePath, "ExpoModulesCorePlugin.gradle")
@@ -32,7 +32,7 @@ if (useManagedAndroidSdkVersions) {
 }
 
 android {
-  namespace "dev.aliaref.RnWallpapaerManager"
+  namespace "dev.aliaref.RnExpoWallpapaerManager"
   defaultConfig {
     versionCode 1
     versionName "0.1.0"

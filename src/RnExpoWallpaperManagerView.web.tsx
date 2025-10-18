@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-import { RnWallpaperManagerViewProps } from './RnWallpaperManager.types';
+import { RnExpoWallpaperManagerViewProps } from './RnExpoWallpaperManager.types';
 
-export default function RnWallpaperManagerView(props: RnWallpaperManagerViewProps) {
+export default function RnExpoWallpaperManagerView(props: RnExpoWallpaperManagerViewProps) {
   return (
     <div>
       <iframe

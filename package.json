@@ -18,16 +18,16 @@
   "keywords": [
     "react-native",
     "expo",
-    "rn-wallpaper-manager",
-    "RnWallpaperManager"
+    "rn-expo-wallpaper-manager",
+    "RnExpoWallpaperManager"
   ],
-  "repository": "https://github.com/Ali-Aref/rn-wallpaper-manager",
+  "repository": "https://github.com/Ali-Aref/rn-expo-wallpaper-manager",
   "bugs": {
-    "url": "https://github.com/Ali-Aref/rn-wallpaper-manager/issues"
+    "url": "https://github.com/Ali-Aref/rn-expo-wallpaper-manager/issues"
   },
   "author": "Ali Aref <aliaref.dev@gmail.com> (https://github.com/Ali-Aref)",
   "license": "MIT",
-  "homepage": "https://github.com/Ali-Aref/rn-wallpaper-manager#readme",
+  "homepage": "https://github.com/Ali-Aref/rn-expo-wallpaper-manager#readme",
   "dependencies": {},
   "devDependencies": {
     "@types/react": "~19.1.0",

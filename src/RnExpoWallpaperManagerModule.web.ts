@@ -1,12 +1,12 @@
 import { registerWebModule, NativeModule } from 'expo';
 
 import { 
-  RnWallpaperManagerModuleEvents, 
+  RnExpoWallpaperManagerModuleEvents, 
   WallpaperResult, 
   WallpaperInfo 
-} from './RnWallpaperManager.types';
+} from './RnExpoWallpaperManager.types';
 
-class RnWallpaperManagerModule extends NativeModule<RnWallpaperManagerModuleEvents> {
+class RnExpoWallpaperManagerModule extends NativeModule<RnExpoWallpaperManagerModuleEvents> {
   /**
    * Set wallpaper from a URL (web implementation - not supported)
    */
@@ -36,4 +36,4 @@ class RnWallpaperManagerModule extends NativeModule<RnWallpaperManagerModuleEven
   }
 }
 
-export default registerWebModule(RnWallpaperManagerModule, 'RnWallpaperManagerModule');
+export default registerWebModule(RnExpoWallpaperManagerModule, 'RnExpoWallpaperManagerModule');

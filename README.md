@@ -21,25 +21,25 @@ npm install rn-expo-wallpaper-manager
 ### Basic Usage
 
 ```typescript
-import RnWallpaperManager from 'rn-expo-wallpaper-manager';
+import RnExpoWallpaperManager from 'rn-expo-wallpaper-manager';
 
 // Check if wallpaper setting is supported
-const isSupported = RnWallpaperManager.isWallpaperSettingSupported();
+const isSupported = RnExpoWallpaperManager.isWallpaperSettingSupported();
 
 // Set wallpaper from URL
-const result = await RnWallpaperManager.setWallpaperFromUrl(
+const result = await RnExpoWallpaperManager.setWallpaperFromUrl(
   'https://example.com/image.jpg',
   'both' // 'home', 'lock', or 'both'
 );
 
 // Set wallpaper from local file
-const result = await RnWallpaperManager.setWallpaperFromFile(
+const result = await RnExpoWallpaperManager.setWallpaperFromFile(
   '/path/to/local/image.jpg',
   'home'
 );
 
 // Get wallpaper capabilities
-const info = await RnWallpaperManager.getCurrentWallpaperInfo();
+const info = await RnExpoWallpaperManager.getCurrentWallpaperInfo();
 ```
 
 ### Event Listening
@@ -47,7 +47,7 @@ const info = await RnWallpaperManager.getCurrentWallpaperInfo();
 ```typescript
 import { useEvent } from 'expo';
 
-const onWallpaperChanged = useEvent(RnWallpaperManager, 'onWallpaperChanged');
+const onWallpaperChanged = useEvent(RnExpoWallpaperManager, 'onWallpaperChanged');
 
 // The event will be triggered when wallpaper is successfully set
 console.log('Wallpaper changed:', onWallpaperChanged);

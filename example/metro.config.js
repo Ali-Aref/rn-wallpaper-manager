@@ -19,7 +19,7 @@ config.resolver.nodeModulesPaths = [
 ];
 
 config.resolver.extraNodeModules = {
-  'rn-wallpaper-manager': '..',
+  'rn-expo-wallpaper-manager': '..',
 };
 
 config.watchFolders = [path.resolve(__dirname, '..')];

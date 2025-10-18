@@ -1,5 +1,5 @@
-// Reexport the native module. On web, it will be resolved to RnWallpaperManagerModule.web.ts
-// and on native platforms to RnWallpaperManagerModule.ts
-export { default } from './RnWallpaperManagerModule';
-export { default as RnWallpaperManagerView } from './RnWallpaperManagerView';
-export * from  './RnWallpaperManager.types';
+// Reexport the native module. On web, it will be resolved to RnExpoWallpaperManagerModule.web.ts
+// and on native platforms to RnExpoWallpaperManagerModule.ts
+export { default } from './RnExpoWallpaperManagerModule';
+export { default as RnExpoWallpaperManagerView } from './RnExpoWallpaperManagerView';
+export * from  './RnExpoWallpaperManager.types';

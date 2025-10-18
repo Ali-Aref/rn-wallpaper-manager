@@ -11,7 +11,7 @@ export type WallpaperChangedEventPayload = {
   type: string;
 };
 
-export type RnWallpaperManagerModuleEvents = {
+export type RnExpoWallpaperManagerModuleEvents = {
   onWallpaperChanged: (params: WallpaperChangedEventPayload) => void;
 };
 
@@ -27,7 +27,7 @@ export type WallpaperInfo = {
   lockScreenSupported: boolean;
 };
 
-export type RnWallpaperManagerViewProps = {
+export type RnExpoWallpaperManagerViewProps = {
   url: string;
   onLoad: (event: { nativeEvent: OnLoadEventPayload }) => void;
   style?: StyleProp<ViewStyle>;
