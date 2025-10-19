@@ -1,22 +1,76 @@
-# React Native Wallpaper Manager
+<div align="center">
 
-A React Native Expo module for setting wallpapers on Android devices.
+# 🖼️ React Native Wallpaper Manager
 
-## Features
+### A powerful React Native Expo module for setting wallpapers on Android devices
 
-- Set wallpaper from URL
-- Set wallpaper from local file path
-- Support for different wallpaper types (home screen, lock screen, or both)
-- Check device wallpaper support capabilities
-- Event notifications when wallpaper changes
+[![npm version](https://img.shields.io/npm/v/rn-expo-wallpaper-manager.svg?style=flat-square)](https://www.npmjs.com/package/rn-expo-wallpaper-manager)
+[![npm downloads](https://img.shields.io/npm/dm/rn-expo-wallpaper-manager.svg?style=flat-square)](https://www.npmjs.com/package/rn-expo-wallpaper-manager)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![Platform](https://img.shields.io/badge/platform-android-green.svg?style=flat-square)](https://www.android.com/)
+[![Expo](https://img.shields.io/badge/Expo-Ready-000020.svg?style=flat-square&logo=expo)](https://expo.dev/)
+[![React Native](https://img.shields.io/badge/React%20Native-0.70+-61DAFB.svg?style=flat-square&logo=react)](https://reactnative.dev/)
 
-## Installation
+</div>
+
+---
+
+## ✨ Features
+
+- 🌐 Set wallpaper from remote URL
+- 📁 Set wallpaper from local file path
+- 📱 Support for different wallpaper types (home screen, lock screen, or both)
+- ✅ Check device wallpaper support capabilities
+- 🔔 Event notifications when wallpaper changes
+- ⚡ Fast and lightweight
+- 🎯 Simple and intuitive API
+
+## 📋 Table of Contents
+
+- [Installation](#-installation)
+- [Quick Start](#-quick-start)
+- [Usage](#-usage)
+  - [Basic Usage](#basic-usage)
+  - [Event Listening](#event-listening)
+- [API Reference](#-api-reference)
+  - [Methods](#methods)
+  - [Types](#types)
+- [Permissions](#-permissions)
+- [Platform Support](#-platform-support)
+- [Example](#-example)
+- [Contributing](#-contributing)
+- [License](#-license)
+
+## 📦 Installation
 
 ```bash
 npm install rn-expo-wallpaper-manager
 ```
 
-## Usage
+**Or using yarn:**
+
+```bash
+yarn add rn-expo-wallpaper-manager
+```
+
+## ⚡ Quick Start
+
+Get up and running in seconds:
+
+```typescript
+import RnExpoWallpaperManager from 'rn-expo-wallpaper-manager';
+
+// Check if supported
+if (RnExpoWallpaperManager.isWallpaperSettingSupported()) {
+  // Set wallpaper from URL
+  await RnExpoWallpaperManager.setWallpaperFromUrl(
+    'https://example.com/image.jpg',
+    'both'
+  );
+}
+```
+
+## 🚀 Usage
 
 ### Basic Usage
 
@@ -53,7 +107,9 @@ const onWallpaperChanged = useEvent(RnExpoWallpaperManager, 'onWallpaperChanged'
 console.log('Wallpaper changed:', onWallpaperChanged);
 ```
 
-## API Reference
+---
+
+## 📖 API Reference
 
 ### Methods
 
@@ -108,24 +164,67 @@ type WallpaperChangedEventPayload = {
 };
 ```
 
-## Permissions
+---
+
+## 🔐 Permissions
 
 The module requires the following Android permissions (automatically included):
 
-- `android.permission.SET_WALLPAPER`
-- `android.permission.READ_EXTERNAL_STORAGE`
-- `android.permission.WRITE_EXTERNAL_STORAGE`
+- ✅ `android.permission.SET_WALLPAPER`
+- ✅ `android.permission.READ_EXTERNAL_STORAGE`
+- ✅ `android.permission.WRITE_EXTERNAL_STORAGE`
 
-## Platform Support
+---
 
-- ✅ Android (fully supported)
-- ❌ iOS (not supported - iOS doesn't allow apps to set wallpapers)
-- ❌ Web (not supported - web browsers can't set system wallpapers)
+## 📱 Platform Support
 
-## Example
+| Platform | Status | Notes |
+|----------|--------|-------|
+| ✅ Android | Fully Supported | All features available |
+| ❌ iOS | Not Supported | iOS doesn't allow apps to set wallpapers |
+| ❌ Web | Not Supported | Web browsers can't set system wallpapers |
 
-See the `example/` directory for a complete working example.
+---
 
-## License
+## 💡 Example
 
-MIT
+Check out the complete working example in the [`example/`](./example) directory to see the module in action!
+
+```typescript
+// Quick example
+import RnExpoWallpaperManager from 'rn-expo-wallpaper-manager';
+
+async function setMyWallpaper() {
+  try {
+    const result = await RnExpoWallpaperManager.setWallpaperFromUrl(
+      'https://picsum.photos/1080/1920',
+      'both'
+    );
+    console.log('Success:', result.message);
+  } catch (error) {
+    console.error('Error setting wallpaper:', error);
+  }
+}
+```
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+---
+
+## 📄 License
+
+MIT © Ali Aref
+
+---
+
+<div align="center">
+
+**Made with ❤️ for React Native developers**
+
+If you find this package helpful, please give it a ⭐ on [GitHub](https://github.com/yourusername/rn-wallpaper-manager)!
+
+</div>
